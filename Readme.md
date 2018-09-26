@@ -4,7 +4,9 @@ This is an extremely simple (and probably not terribly robust), command line uti
 
 ## Usage
 
+```
 python mbexport.py --input {Path_To_Mbtiles} --output {Path_To_Write_Tiles_To}
+```
 
 ## License
 
