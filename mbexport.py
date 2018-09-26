@@ -3,7 +3,12 @@ import logging
 import os
 import sqlite3
 
+def correct_y_value(y, zoom):
+    y_max = 1 << zoom
+    return y_max - y - 1
+
 def write_tile(output_dir, zoom_level, column, row, data):
+    row = correct_y_value(row, zoom_level)
     path = os.path.join(output_dir, str(zoom_level), str(column))
     if not os.path.exists(path):
         os.makedirs(path)
